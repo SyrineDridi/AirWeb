@@ -1,9 +1,7 @@
 package fr.airweb.airwebtest.fragments
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.ProgressBar
 import androidx.appcompat.widget.SearchView
 import androidx.core.os.bundleOf
@@ -17,6 +15,7 @@ import fr.airweb.airwebtest.utils.Constants
 import fr.airweb.airwebtest.adapters.NewsItemRecyclerViewAdapter
 import fr.airweb.airwebtest.R
 import fr.airweb.airwebtest.domain.models.PsgModel
+import fr.airweb.airwebtest.domain.models.PsgModelTypeEnum
 import fr.airweb.airwebtest.ui.NewsViewModel
 import fr.airweb.airwebtest.ui.UiNewsEvent
 import fr.airweb.airwebtest.utils.CellClickListener
@@ -31,6 +30,7 @@ class ListNewsFragment : Fragment(), CellClickListener, SearchView.OnQueryTextLi
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_list_news, container, false)
+        setHasOptionsMenu(true)
         val rcyListNews = view.findViewById<RecyclerView>(R.id.RcyVlistNews)
         progressLoading = view.findViewById(R.id.Progressoading)
         displayLoading(true)
@@ -38,12 +38,11 @@ class ListNewsFragment : Fragment(), CellClickListener, SearchView.OnQueryTextLi
         val editSearch = view.findViewById<SearchView>(R.id.search)
         editSearch.setOnQueryTextListener(this)
 
-        //init the Custom adataper
         val adapter = NewsItemRecyclerViewAdapter(
             requireContext(),
             this
         )
-        //set the CustomAdapter
+
         rcyListNews.adapter = adapter
         viewModel.uiNewsEvent.observe(
             requireActivity(),
@@ -84,9 +83,40 @@ class ListNewsFragment : Fragment(), CellClickListener, SearchView.OnQueryTextLi
     }
 
     private fun navigateToContactFragment() {
-        (requireActivity()as MainActivity).contactBtn?.setOnClickListener {
+        (requireActivity() as MainActivity).contactBtn?.setOnClickListener {
             view?.findNavController()
                 ?.navigate(R.id.action_ListNewsFragment_to_ContactFragment)
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu_main, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_news -> {
+                viewModel.fetchByType(PsgModelTypeEnum.NEWS)
+                true
+            }
+            R.id.action_hot -> {
+                viewModel.fetchByType(PsgModelTypeEnum.HOT)
+                true
+            }
+            R.id.action_actualite -> {
+                viewModel.fetchByType(PsgModelTypeEnum.ACTUALITE)
+                true
+            }
+            R.id.action_sort_by_title -> {
+                viewModel.sortListByTitle()
+                true
+            }
+            R.id.action_sort_by_date -> {
+                viewModel.sortListByDate()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 }
