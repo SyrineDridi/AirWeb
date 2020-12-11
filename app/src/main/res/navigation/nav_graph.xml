@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/ListNewsFragment">
+
+    <fragment
+        android:id="@+id/ListNewsFragment"
+        android:name="fr.airweb.airwebtest.fragments.ListNewsFragment"
+        tools:layout="@layout/fragment_list_news">
+        <action
+            android:id="@+id/action_ListNewsFragment_to_DetailsNewsFragment"
+            app:destination="@id/DetailsNewsFragment" />
+        <action
+            android:id="@+id/action_ListNewsFragment_to_ContactFragment"
+            app:destination="@id/ContactFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/DetailsNewsFragment"
+        android:name="fr.airweb.airwebtest.fragments.DetailsNewsFragment"
+        tools:layout="@layout/fragment_details_news">
+        <argument
+            android:name="news_details"
+            app:argType="fr.airweb.airwebtest.domain.models.PsgModel" />
+        <action
+            android:id="@+id/action_DetailsNewsFragment_to_ContactFragment"
+            app:destination="@id/ContactFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ContactFragment"
+        android:name="fr.airweb.airwebtest.fragments.ContactFragment"
+        tools:layout="@layout/fragment_contact">
+    </fragment>
+</navigation>

@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">AirWebTest</string>
+
+    <string name="type_news_lable">News</string>
+    <string name="type_hot_label">Hot</string>
+    <string name="type_actualite_label">Actualité</string>
+
+    <string name="date_label">Date</string>
+    <string name="titre_label">Titre </string>
+    <string name="adresse_label">Adresse </string>
+    <string name="mail_label">Mail </string>
+    <string name="tel_label">Tel </string>
+
+</resources>
