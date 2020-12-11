@@ -37,8 +37,6 @@ class NewsViewModel(
 
     private fun fetchNewsLocally() {
         fetchPsgNewsFromLocal.invoke()
-            .observeOn(Schedulers.io())
-            .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({ result ->
                 if (result.isNullOrEmpty()) {
@@ -67,8 +65,6 @@ class NewsViewModel(
 
     private fun fetchListNew() {
         fetchPsgNews.invoke()
-            .observeOn(Schedulers.io())
-            .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({ result ->
                 _uiNewsEvent.value = UiNewsEvent.DisplayNewsByType(result.news)
@@ -80,8 +76,6 @@ class NewsViewModel(
 
     fun fetchByType(typeEnum: NewsDetailsTypeEnum) {
         fetchPsgNewsByTypeFromLocal.invoke(typeEnum)
-            .observeOn(Schedulers.io())
-            .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({ result -> _uiNewsEvent.value = UiNewsEvent.DisplayNewsByType(result) },
                 { exception ->
@@ -95,8 +89,7 @@ class NewsViewModel(
     }
 
     fun sortListByDate() {
-        _uiNewsEvent.value =
-            UiNewsEvent.DisplayNewsSortedByTitle(list.sortedBy { t -> t.date })
+        _uiNewsEvent.value = UiNewsEvent.DisplayNewsSortedByDate(list.sortedBy { t -> t.date })
     }
 
     fun searchNewsByTitle(text: String) {
