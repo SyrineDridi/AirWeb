@@ -3,7 +3,7 @@ package fr.airweb.airwebtest.data.mappers
 import fr.airweb.airwebtest.api.models.NewsDetailsModel
 import fr.airweb.airwebtest.api.models.NewsDetailsModelTypeEnum
 import fr.airweb.airwebtest.api.models.NewsModel
-import fr.airweb.airwebtest.domain.models.NewsModelEntity
+import fr.airweb.airwebtest.domain.models.News
 import fr.airweb.airwebtest.domain.models.PsgModel
 import fr.airweb.airwebtest.domain.models.PsgModelTypeEnum
 
@@ -29,8 +29,8 @@ class NewsModelMapper {
        }
     }
 
-    fun mapPsgModelToEntityNewModel(newsModel: NewsModel): NewsModelEntity {
-        return NewsModelEntity(
+    fun mapPsgModelToEntityNewModel(newsModel: NewsModel): News {
+        return News(
                getList(newsModel)
         )
     }

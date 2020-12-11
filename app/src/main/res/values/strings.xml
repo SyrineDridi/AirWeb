@@ -7,8 +7,9 @@
 
     <string name="date_label">Date</string>
     <string name="titre_label">Titre </string>
-    <string name="adresse_label">Adresse </string>
-    <string name="mail_label">Mail </string>
-    <string name="tel_label">Tel </string>
+    <string name="titre_contact_label">Titre :</string>
+    <string name="adresse_label">Adresse :</string>
+    <string name="mail_label">Mail :</string>
+    <string name="tel_label">Tel :</string>
 
 </resources>

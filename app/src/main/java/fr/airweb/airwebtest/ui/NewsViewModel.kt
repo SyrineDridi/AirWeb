@@ -13,8 +13,6 @@ import fr.airweb.airwebtest.domain.usescases.SavePsgNewsInLocal
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
-import java.text.SimpleDateFormat
-import java.time.LocalDate
 import java.util.*
 
 class NewsViewModel(
@@ -71,6 +69,7 @@ class NewsViewModel(
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe { result ->
                 _uiNewsEvent.value = UiNewsEvent.DisplayNewsByType(result.news)
+
                 saveData(result.news)
             }
             .also { disposables.add(it) }

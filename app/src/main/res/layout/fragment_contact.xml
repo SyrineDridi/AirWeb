@@ -7,7 +7,6 @@
     android:layout_margin="@dimen/text_margin"
     android:orientation="vertical"
     tools:context=".fragments.ContactFragment">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,7 +16,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/titre_label" />
+            android:layout_marginEnd="@dimen/half_text_margin"
+            android:text="@string/titre_contact_label" />
 
         <TextView
             android:id="@+id/idTitle"
@@ -34,6 +34,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/half_text_margin"
             android:text="@string/adresse_label" />
 
         <TextView
@@ -52,7 +53,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/mail_label" />
+            android:text="@string/mail_label"
+            android:layout_marginEnd="@dimen/half_text_margin"/>
 
         <TextView
             android:id="@+id/idMail"
@@ -69,6 +71,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/half_text_margin"
             android:text="@string/tel_label" />
 
         <TextView

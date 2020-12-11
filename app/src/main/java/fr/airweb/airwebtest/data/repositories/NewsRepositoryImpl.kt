@@ -1,20 +1,20 @@
 package fr.airweb.airwebtest.data.repositories
 
-import fr.airweb.airwebtest.domain.models.NewsModelEntity
+import fr.airweb.airwebtest.domain.models.News
 import fr.airweb.airwebtest.domain.models.PsgModel
 import fr.airweb.airwebtest.domain.models.PsgModelTypeEnum
-import fr.airweb.airwebtest.domain.repositories.PsgRepository
+import fr.airweb.airwebtest.domain.repositories.NewsRepository
 import fr.airweb.airwebtest.domain.sources.NewsLocalDataSource
 import fr.airweb.airwebtest.domain.sources.PsgRemoteDataSource
 import io.reactivex.Completable
 import io.reactivex.Observable
 
-class PsgRepositoryImpl(
+class NewsRepositoryImpl(
     private val localeSource: NewsLocalDataSource,
     private val remoteSource: PsgRemoteDataSource
-) : PsgRepository {
+) : NewsRepository {
 
-    override fun getPsgNews(): Observable<NewsModelEntity> {
+    override fun getPsgNews(): Observable<News> {
         return remoteSource.getPsgNews()
     }
 
