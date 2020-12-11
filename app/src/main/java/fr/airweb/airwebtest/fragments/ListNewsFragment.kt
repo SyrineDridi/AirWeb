@@ -14,8 +14,8 @@ import fr.airweb.airwebtest.MainActivity
 import fr.airweb.airwebtest.utils.Constants
 import fr.airweb.airwebtest.adapters.NewsItemRecyclerViewAdapter
 import fr.airweb.airwebtest.R
-import fr.airweb.airwebtest.domain.models.PsgModel
-import fr.airweb.airwebtest.domain.models.PsgModelTypeEnum
+import fr.airweb.airwebtest.domain.models.NewsDetails
+import fr.airweb.airwebtest.domain.models.NewsDetailsTypeEnum
 import fr.airweb.airwebtest.ui.NewsViewModel
 import fr.airweb.airwebtest.ui.UiNewsEvent
 import fr.airweb.airwebtest.utils.CellClickListener
@@ -66,8 +66,8 @@ class ListNewsFragment : Fragment(), CellClickListener, SearchView.OnQueryTextLi
         progressLoading?.visibility = if (loading) View.VISIBLE else View.GONE
     }
 
-    override fun onCellClickListener(psgModel: PsgModel) {
-        val bundle = bundleOf(Constants.PSG_NEW_DETAIL to psgModel)
+    override fun onCellClickListener(newDetailModel: NewsDetails) {
+        val bundle = bundleOf(Constants.PSG_NEW_DETAIL to newDetailModel)
         view?.findNavController()
             ?.navigate(R.id.action_ListNewsFragment_to_DetailsNewsFragment, bundle)
     }
@@ -97,15 +97,15 @@ class ListNewsFragment : Fragment(), CellClickListener, SearchView.OnQueryTextLi
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_news -> {
-                viewModel.fetchByType(PsgModelTypeEnum.NEWS)
+                viewModel.fetchByType(NewsDetailsTypeEnum.NEWS)
                 true
             }
             R.id.action_hot -> {
-                viewModel.fetchByType(PsgModelTypeEnum.HOT)
+                viewModel.fetchByType(NewsDetailsTypeEnum.HOT)
                 true
             }
             R.id.action_actualite -> {
-                viewModel.fetchByType(PsgModelTypeEnum.ACTUALITE)
+                viewModel.fetchByType(NewsDetailsTypeEnum.ACTUALITE)
                 true
             }
             R.id.action_sort_by_title -> {

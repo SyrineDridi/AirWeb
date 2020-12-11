@@ -4,9 +4,9 @@ import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 
-data class PsgModel(
+data class NewsDetails(
     @SerializedName("nid") val nid: Int?,
-    @SerializedName("type") val type: PsgModelTypeEnum? = null,
+    @SerializedName("type") val type: NewsDetailsTypeEnum? = null,
     @SerializedName("date") val date: String? = null,
     @SerializedName("title") val title: String?,
     @SerializedName("picture") val picture: String? = null,
@@ -14,7 +14,7 @@ data class PsgModel(
     @SerializedName("dateFormated") val dateFormated: String? = null
 ) : Serializable
 
-enum class PsgModelTypeEnum {
+enum class NewsDetailsTypeEnum {
     @SerializedName("news")
     NEWS,
 

@@ -22,7 +22,7 @@
         tools:layout="@layout/fragment_details_news">
         <argument
             android:name="news_details"
-            app:argType="fr.airweb.airwebtest.domain.models.PsgModel" />
+            app:argType="fr.airweb.airwebtest.domain.models.NewsDetails" />
         <action
             android:id="@+id/action_DetailsNewsFragment_to_ContactFragment"
             app:destination="@id/ContactFragment" />

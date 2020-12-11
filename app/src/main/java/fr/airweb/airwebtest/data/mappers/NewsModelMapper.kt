@@ -4,13 +4,13 @@ import fr.airweb.airwebtest.api.models.NewsDetailsModel
 import fr.airweb.airwebtest.api.models.NewsDetailsModelTypeEnum
 import fr.airweb.airwebtest.api.models.NewsModel
 import fr.airweb.airwebtest.domain.models.News
-import fr.airweb.airwebtest.domain.models.PsgModel
-import fr.airweb.airwebtest.domain.models.PsgModelTypeEnum
+import fr.airweb.airwebtest.domain.models.NewsDetails
+import fr.airweb.airwebtest.domain.models.NewsDetailsTypeEnum
 
 class NewsModelMapper {
 
-    fun mapPsgModelToEntityModel(newsModel: NewsDetailsModel): PsgModel {
-        return PsgModel(
+    fun mapPsgModelToEntityModel(newsModel: NewsDetailsModel): NewsDetails {
+        return NewsDetails(
             newsModel.nid,
             newsModel.type?.let { mapEnumNewsModel(it) },
             newsModel.date,
@@ -21,11 +21,11 @@ class NewsModelMapper {
         )
     }
 
-    fun mapEnumNewsModel(typeEnum: NewsDetailsModelTypeEnum) : PsgModelTypeEnum{
+    fun mapEnumNewsModel(typeEnum: NewsDetailsModelTypeEnum) : NewsDetailsTypeEnum{
        return when(typeEnum){
-           NewsDetailsModelTypeEnum.ACTUALITE -> PsgModelTypeEnum.ACTUALITE
-           NewsDetailsModelTypeEnum.HOT -> PsgModelTypeEnum.HOT
-           NewsDetailsModelTypeEnum.NEWS ->PsgModelTypeEnum.NEWS
+           NewsDetailsModelTypeEnum.ACTUALITE -> NewsDetailsTypeEnum.ACTUALITE
+           NewsDetailsModelTypeEnum.HOT -> NewsDetailsTypeEnum.HOT
+           NewsDetailsModelTypeEnum.NEWS ->NewsDetailsTypeEnum.NEWS
        }
     }
 
@@ -35,8 +35,8 @@ class NewsModelMapper {
         )
     }
 
-    fun getList(newsModel: NewsModel): List<PsgModel> {
-        val list = mutableListOf<PsgModel>()
+    fun getList(newsModel: NewsModel): List<NewsDetails> {
+        val list = mutableListOf<NewsDetails>()
         newsModel.news.forEach { t -> list.add(mapPsgModelToEntityModel(t)) }
         return list
     }

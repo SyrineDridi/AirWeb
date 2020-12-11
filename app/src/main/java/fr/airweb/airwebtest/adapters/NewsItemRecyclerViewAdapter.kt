@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import fr.airweb.airwebtest.R
-import fr.airweb.airwebtest.domain.models.PsgModel
+import fr.airweb.airwebtest.domain.models.NewsDetails
 import fr.airweb.airwebtest.utils.CellClickListener
 
 class NewsItemRecyclerViewAdapter(
@@ -17,14 +17,14 @@ class NewsItemRecyclerViewAdapter(
     private val cellClickListener: CellClickListener
 ) : RecyclerView.Adapter<NewsItemRecyclerViewAdapter.ViewHolder>() {
 
-    private var list = listOf<PsgModel>()
+    private var list = listOf<NewsDetails>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.fragment_list_news_item, parent, false)
         return ViewHolder(view)
     }
 
-    fun setNewsList(mDeveloperModel: List<PsgModel>) {
+    fun setNewsList(mDeveloperModel: List<NewsDetails>) {
         this.list = mDeveloperModel
         notifyDataSetChanged()
     }

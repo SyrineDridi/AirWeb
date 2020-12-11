@@ -123,6 +123,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/fr/airweb/airwebtest/data/repositories/NewsRepositoryImpl.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/fr/airweb/airwebtest/data/repositories/PsgRepositoryImpl.kt">
           <value>
             <set />
@@ -163,6 +168,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/fr/airweb/airwebtest/domain/models/News.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/fr/airweb/airwebtest/domain/models/NewsDetails.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/fr/airweb/airwebtest/domain/models/NewsModel.kt">
           <value>
             <set />
@@ -174,6 +189,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/fr/airweb/airwebtest/domain/models/PsgModel.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/fr/airweb/airwebtest/domain/repositories/NewsRepository.kt">
           <value>
             <set />
           </value>
@@ -318,7 +338,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/test/java/fr/airweb/airwebtest/NewsViewModel.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/test/java/fr/airweb/airwebtest/NewsViewModelTest.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/StudioProjects/Total/android/app/src/test/java/com/total/ev/msp/uiModel/ServiceProductUiModelTest.kt">
           <value>
             <set />
           </value>
@@ -334,6 +369,11 @@
           </value>
         </entry>
         <entry key="$USER_HOME$/StudioProjects/Total/android/db/src/main/java/com/total/ev/msp/db/entites/location/LocationEntity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/StudioProjects/europcar/easybookingmanagement/src/test/java/com/application/europcar/newapp/ebm/search/filter/VehicleFilterViewModelTest.kt">
           <value>
             <set />
           </value>

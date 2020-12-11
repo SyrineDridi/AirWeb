@@ -1,8 +1,8 @@
 package fr.airweb.airwebtest.data.repositories
 
 import fr.airweb.airwebtest.domain.models.News
-import fr.airweb.airwebtest.domain.models.PsgModel
-import fr.airweb.airwebtest.domain.models.PsgModelTypeEnum
+import fr.airweb.airwebtest.domain.models.NewsDetails
+import fr.airweb.airwebtest.domain.models.NewsDetailsTypeEnum
 import fr.airweb.airwebtest.domain.repositories.NewsRepository
 import fr.airweb.airwebtest.domain.sources.NewsLocalDataSource
 import fr.airweb.airwebtest.domain.sources.PsgRemoteDataSource
@@ -18,15 +18,15 @@ class NewsRepositoryImpl(
         return remoteSource.getPsgNews()
     }
 
-    override fun saveNews(news: List<PsgModel>) :Completable{
+    override fun saveNews(news: List<NewsDetails>) :Completable{
        return localeSource.saveNews(news)
     }
 
-    override fun getPsgNewsFromLocal(): Observable<List<PsgModel>> {
+    override fun getPsgNewsFromLocal(): Observable<List<NewsDetails>> {
         return localeSource.getListNews()
     }
 
-    override fun getPsgNewsByType(type: PsgModelTypeEnum): Observable<List<PsgModel>> {
+    override fun getPsgNewsByType(type: NewsDetailsTypeEnum): Observable<List<NewsDetails>> {
         return localeSource.getNewsByType(type)
     }
 }

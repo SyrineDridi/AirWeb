@@ -1,7 +1,7 @@
 package fr.airweb.airwebtest.utils
 
-import fr.airweb.airwebtest.domain.models.PsgModel
+import fr.airweb.airwebtest.domain.models.NewsDetails
 
 interface CellClickListener {
-    fun onCellClickListener(psgModel: PsgModel)
+    fun onCellClickListener(psgModel: NewsDetails)
 }

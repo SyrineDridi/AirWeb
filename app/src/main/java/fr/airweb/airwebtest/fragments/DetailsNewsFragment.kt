@@ -12,15 +12,15 @@ import com.bumptech.glide.Glide
 import fr.airweb.airwebtest.MainActivity
 import fr.airweb.airwebtest.utils.Constants
 import fr.airweb.airwebtest.R
-import fr.airweb.airwebtest.domain.models.PsgModel
+import fr.airweb.airwebtest.domain.models.NewsDetails
 
 class DetailsNewsFragment : Fragment() {
-    private var psgModelDetail: PsgModel? = null
+    private var psgModelDetail: NewsDetails? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            psgModelDetail = it.getSerializable(Constants.PSG_NEW_DETAIL) as PsgModel?
+            psgModelDetail = it.getSerializable(Constants.PSG_NEW_DETAIL) as NewsDetails?
         }
     }
 
